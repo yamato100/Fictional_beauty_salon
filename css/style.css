@@ -223,6 +223,9 @@ nav ul li {
 .staff-inner {
   display: flex;
 }
+.staff-pic {
+  flex-basis: 30%;
+}
 .staff-pic img {
   width: 80%;
 }
@@ -234,7 +237,6 @@ nav ul li {
 }
 .staff-item {
   padding: 20px;
-  flex-basis: 30%;
 }
 
 /*----- footer -----*/
@@ -247,13 +249,12 @@ footer {
 
 /*----- responsive -----*/
 @media screen and (max-width:600px) {
-  h3 {
-    
+  h2 {
+    font-size: 1.8rem;
   }
   p {
     font-size: 1.2rem;
   }
-
   .nav {
     position: fixed;
     top: 0;
@@ -294,19 +295,12 @@ footer {
   .staff-inner {
     flex-direction: column;
   }
-  .staff-pic1 img {
+  .staff-pic img {
     width: 250px;
     height: 250px;
     border-radius: 50%;
     object-fit: cover;
-    object-position: 100% 0%
-  }
-  .staff-pic2 img {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    object-fit: cover;
-    object-position: 100% 0%
+    object-position: 100% 0;
   }
   footer p {
     font-size: 0.8rem;
