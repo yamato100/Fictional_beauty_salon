@@ -23,6 +23,15 @@ _window.trigger('scroll');
 // スムーズスクロール
 var scroll = new SmoothScroll('a');
 
+// ハンバーガーメニュー
+$(function(){
+    $('.nav_toggle').on('click', function(){
+        $('.nav_toggle, .nav').toggleClass('show');
+        console.log('click!!')
+    });
+});
+
+
 // $(window).scroll(function(){
 //     var st = $(window).scrollTop();
 //     if(st < 1000){

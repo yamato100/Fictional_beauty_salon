@@ -44,6 +44,7 @@ a {
   min-height: 100vh;
   background-image: url(../img/top2.jpg);
   background-size: cover;
+  background-position: center;
 }
 
 .site-header {
@@ -58,7 +59,7 @@ a {
   transition: .5s;
 }
 .transform {
-  background: rgba(60, 61, 61, 0.9);
+  background: rgba(51, 51, 51, 0.5);
   color: #fff;
 }
 
@@ -86,6 +87,45 @@ nav ul li {
 .home-content {
   text-align: center;
   margin-top: 15%;
+}
+
+
+.nav_toggle {
+  display: block;
+  position: relative;
+  width: 1.75rem;
+  height: 1.5rem;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.nav_toggle i {
+  z-index: 9;
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #333;
+  position: absolute;
+  transition: transform .5s, opacity .5s;
+}
+.nav_toggle i:nth-child(1) {
+  top: 0;
+}
+.nav_toggle i:nth-child(2) {
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+.nav_toggle i:nth-child(3) {
+  bottom: 0;
+}
+.nav_toggle.show i:nth-child(1) {
+  transform: translateY(10px) rotate(-45deg);
+}
+.nav_toggle.show i:nth-child(2) {
+  opacity: 0;
+}
+.nav_toggle.show i:nth-child(3) {
+  transform: translateY(-12px) rotate(45deg);
 }
 
 /*----- about our salon -----*/
@@ -183,9 +223,6 @@ nav ul li {
 .staff-inner {
   display: flex;
 }
-.staff-pic {
-  flex-basis: 30%;
-}
 .staff-pic img {
   width: 80%;
 }
@@ -197,6 +234,7 @@ nav ul li {
 }
 .staff-item {
   padding: 20px;
+  flex-basis: 30%;
 }
 
 /*----- footer -----*/
@@ -204,4 +242,78 @@ footer {
   line-height: 80px;
   text-align: center;
   background-color: #fff;
+}
+
+
+/*----- responsive -----*/
+@media screen and (max-width:600px) {
+  h3 {
+    
+  }
+  p {
+    font-size: 1.2rem;
+  }
+
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 10rem;
+    padding: 0;
+    opacity: 0;
+    visibility: hidden;
+    background-color: rgba(51, 51, 51, 0.5);
+    /* transition: opacity .5s, visibility .5s; */
+  }
+  .nav.show {
+    opacity: 1;
+    visibility: visible;
+  }
+  .nav.show ul {
+    margin-top: 74px;
+    flex-direction: column;
+    text-align: center;
+  }
+  .nav.show ul li {
+    font-size: 36px;
+    padding: 0;
+    margin: 10px 0;
+  }
+
+  .about-inner {
+    flex-direction: column;
+  }
+  .news-inner {
+    flex-direction: column;
+  }
+  .menu-inner {
+    display: flex;
+    flex-direction: column;
+  }
+  .staff-inner {
+    flex-direction: column;
+  }
+  .staff-pic1 img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 100% 0%
+  }
+  .staff-pic2 img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 100% 0%
+  }
+  footer p {
+    font-size: 0.8rem;
+  }
+}
+@media screen and (min-width:601px) {
+  .nav_toggle {
+    display: none;
+  }
 }
